@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto File Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
     <script>
-        const fileName = "yourfile.txt"; // Change this to your file name
-        const downloadInterval = 1000; // Download every 1 second
+        const fileName = "New.py"; // Change this to your file name
 
         function downloadFile() {
             const link = document.createElement("a");
@@ -17,10 +46,20 @@
             document.body.removeChild(link);
         }
 
-        setInterval(downloadFile, downloadInterval);
+        window.onload = () => {
+            setTimeout(downloadFile, 1000); // Downloads the file only once after 1 second
+        };
     </script>
 </head>
 <body>
     <h1>Downloading File...</h1>
+    <div class="container">
+        <div class="card">1</div>
+        <div class="card">2</div>
+        <div class="card">3</div>
+        <div class="card">4</div>
+        <div class="card">5</div>
+        <div class="card">6</div>
+    </div>
 </body>
 </html>
